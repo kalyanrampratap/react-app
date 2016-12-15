@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {getUserData, onNavClickHandler} from '../actions/index';
+import {onNavClickHandler} from '../actions/index';
 
 class NavBar extends Component {
   constructor(props) {
     super(props);
-    this.props.getUserData();
   }
   
   render(){
@@ -45,7 +44,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({onNavClickHandler, getUserData}, dispatch);
+    return bindActionCreators({onNavClickHandler}, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
